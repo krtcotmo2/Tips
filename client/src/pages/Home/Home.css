@@ -46,6 +46,9 @@
   width:50%;
   display: inline-block
 }
+.btnHome{
+  margin-bottom:24px;
+}
 .range-field{
   width:80%;
   margin:0 auto;
@@ -60,4 +63,26 @@ input[type=text], input[type=number]{
 }
 .helper-text{
   display: none !important;
+}
+
+
+.rangeslider.rangeslider-horizontal{
+  width:80%;
+  margin:24px auto;
+}
+.rangeslider__handle::after{
+  visibility: hidden;
+}
+.rangeslider__handle-label{
+  line-height: 28px;
+}
+input[type=text]:not(.browser-default):disabled{
+  color:black !important;
+}
+.rangeslider__labels{
+  margin-top:0px;
+  margin-bottom:12px;
+}
+#tipslider{
+  margin-bottom:36px;
 }
