@@ -24,6 +24,7 @@
     "materialize-css": "^1.0.0",
     "morgan": "~1.9.0",
     "react-materialize": "^3.3.1",
+    "react-rangeslider": "^2.2.0",
     "react-router-dom": "^5.0.1"
   }
 }
