@@ -79,11 +79,21 @@ export default class Even extends PureComponent {
         <span>Number in Party</span>
         <div id="peopleslider">
           <Slider name="people" min={2} max={12} value={numPeople} handleLabel={numPeople.toString()}  onChange={this.handlePeopleChange}/>
-        </div>             
-        <span>Total Bill</span>
+        </div>        
+        <div className='row'>
+          <div className="col s6">
+            <span>Total Bill</span>
+            <TextInput type="number"  name="totalBill" value={totalBill} onChange={this.updateBill} />
+          </div>
+          <div className="col s6">
+            <span>Tax Amount</span>
+            <TextInput type="number" name="taxAmount" value={taxAmount} onChange={this.updateBill}  />
+          </div>
+        </div>     
+        {/* <span>Total Bill</span>
         <TextInput type="number"  name="totalBill" value={totalBill} onChange={this.updateBill} />
         <span>Tax Amount</span>
-        <TextInput type="number" name="taxAmount" value={taxAmount} onChange={this.updateBill}  />
+        <TextInput type="number" name="taxAmount" value={taxAmount} onChange={this.updateBill}  /> */}
         <span style={{width:'50%', display:'inline-block'}}>Include Taxes</span>
         <Switch offLabel="No" onLabel="Yes" checked={includeTax} onChange={this.changeTax}/>  
         <span>Tip Percent</span>
@@ -92,7 +102,9 @@ export default class Even extends PureComponent {
         </div>
         <span>Amount Per Person</span>
         <TextInput disabled value={personAmount.toFixed(2)} />
-        <Link to="/"><button className="btn btnHome">Home</button></Link> 
+        <p>
+          <Link to="/"><button className="btn">Home</button></Link>
+        </p> 
       </section>
     )
   }
