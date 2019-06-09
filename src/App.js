@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { PureComponent } from "react";
+import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Even from "./pages/Even/Even";
+import Itemize from "./pages/Itemize/Itemize";
+import TotalSum from "./pages/TotalSum/TotalSum";
+
 import './App.css';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Even" component={Even} />
+          <Route exact path="/Itemize" component={Itemize} />
+          <Route exact path="/TotalSum" component={TotalSum} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
