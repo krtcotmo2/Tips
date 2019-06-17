@@ -23,10 +23,12 @@ export default class TotalSum extends PureComponent {
     
   };
 
-  updateBill = event =>{    
-    const { name, value } = event.target;
-    this.setState({ [name]: parseFloat(value) });
+  updateBill = event =>{   
 
+    let { name, value } = event.target;
+    value = value.replace(/\./g, '')
+    let temp = value.replace(/^0+/, '')
+    this.setState({ [name]: parseInt(temp)/100});
     let _this = this;
     let _cb = this.calculatePerPerson
     setTimeout(
@@ -51,7 +53,6 @@ export default class TotalSum extends PureComponent {
   }
 
   calculatePerPerson = () => {
-    console.log(this.state)
     let tippableAmount = this.state.includeTax ? this.state.totalBill : this.state.totalBill - this.state.taxAmount;
     let totalTip = tippableAmount * (this.state.tipPercent/100);    
     return totalTip + this.state.totalBill;
@@ -69,25 +70,29 @@ export default class TotalSum extends PureComponent {
         <div className='row'>
           <div className="col s6">
             <span>Total Bill</span>
-            <TextInput type="number"  name="totalBill" value={totalBill} onChange={this.updateBill} />
+            <TextInput type="number"  name="totalBill" value={totalBill.toFixed(2)} onChange={this.updateBill} />
           </div>
           <div className="col s6">
             <span>Tax Amount</span>
-            <TextInput type="number" name="taxAmount" value={taxAmount} onChange={this.updateBill}  />
+            <TextInput type="number" name="taxAmount" value={taxAmount.toFixed(2)} onChange={this.updateBill}  />
           </div>
         </div>
-        {/* <span>Total Bill</span>
-        <TextInput type="number"  name="totalBill" value={totalBill} onChange={this.updateBill} />
-        <span>Tax Amount</span>
-        <TextInput type="number" name="taxAmount" value={taxAmount} onChange={this.updateBill}  /> */}
         <span style={{width:'50%', display:'inline-block'}}>Include Taxes</span>
         <Switch offLabel="No" onLabel="Yes" checked={includeTax} onChange={this.changeTax}/>  
         <span>Tip Percent</span>
         <div id="tipslider">
           <Slider name="tipPercent" min={0} max={30} value={tipPercent} handleLabel={tipPercent.toString()} onChange={this.handleTipChange} labels={horizontalLabels}/>
         </div>
-        <span>Amount Per Person</span>
-        <TextInput disabled value={totalWTip.toFixed(2)} />
+        <div className='row'>
+          <div className="col s6">
+            <span>Tip Amount</span>
+            <TextInput disabled value={(totalWTip-totalBill).toFixed(2)} />
+          </div>
+          <div className="col s6">
+            <span>Amount Including Tip</span>
+            <TextInput disabled value={totalWTip.toFixed(2)} />
+          </div>
+        </div>
         <p>
           <Link to="/"><button className="btn">Home</button></Link>
         </p>

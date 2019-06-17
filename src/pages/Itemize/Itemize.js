@@ -165,19 +165,30 @@ export default class Itemize extends PureComponent {
           </div>
         </div>
 
-        <div className='row'>
-          <span style={{width:'80%', margin:'0 auto', display:'block'}}>Amount owed by individual</span>
-          <div className="col s6">            
+        <div className='row'>          
+          <div className="col s6">   
+          <span>Tip Amount</span>         
             <TextInput disabled type="number" value={indTotalWTip.toFixed(2)} />
           </div>
-          <div className="col s6">
+          <div className="col s6"> 
+            <span>Total with Tip</span>             
+            <TextInput disabled type="number" value={indTotalWTip.toFixed(2)} />
+          </div>
+        </div>
+        <div className='row'>
+          <div className="col s6">  
             <p>
-              <button className="btn" onClick={this.clearIndividual}>Clear Ind.</button>
+              <button className="btn" onClick={this.clearIndividual}>Clear</button>
+            </p>
+          </div>
+          <div className="col s6">  
+            <p>
+              <button className="btn" onClick={this.clearIndividual}>Reset</button>
             </p>
           </div>
         </div>
         <p>
-          <Link to="/"><button className="btn">Home</button></Link>
+          <Link to="/"><button className="btn btnHome">Home</button></Link>
         </p>
       </section>
     )
