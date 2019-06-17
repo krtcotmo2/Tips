@@ -1,0 +1,20 @@
+.MuiDialog-paperWidthSm-9{
+  z-index: 200;
+  max-width: 700px;
+}
+.modal-header{
+  padding: 16px;
+  border-bottom: 1px solid #6a6a6a;  
+}
+.modal-header h4{
+  margin: 0px;
+}
+.modal.open{
+  display:block;
+  opacity: 1;
+  top:10%;
+  transform: scaleX(1)  scaleY(1);
+}
+div[class*="MuiPaper-root"] {
+  margin:12px;
+ }

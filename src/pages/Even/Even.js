@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Switch, Range, TextInput } from 'react-materialize';
+import { Switch, TextInput } from 'react-materialize';
 import {Link}from "react-router-dom";
 import Slider from 'react-rangeslider'
 
@@ -29,8 +29,11 @@ export default class Even extends PureComponent {
     })
   };
   updateBill = event =>{    
-    const { name, value } = event.target;
-    this.setState({ [name]: parseFloat(value) });
+    let { name, value } = event.target;
+    value = value.replace(/\./g, '')
+    let temp = value.replace(/^0+/, '')
+
+    this.setState({ [name]:  parseInt(temp)/100});
 
     let _this = this;
     let _cb = this.calculatePerPerson
@@ -79,20 +82,48 @@ export default class Even extends PureComponent {
         <span>Number in Party</span>
         <div id="peopleslider">
           <Slider name="people" min={2} max={12} value={numPeople} handleLabel={numPeople.toString()}  onChange={this.handlePeopleChange}/>
-        </div>             
-        <span>Total Bill</span>
+        </div>        
+        <div className='row'>
+          <div className="col s6">
+            <span>Total Bill</span>
+            <TextInput type="number"  name="totalBill" value={totalBill.toFixed(2)} onChange={this.updateBill} />
+          </div>
+          <div className="col s6">
+            <span>Tax Amount</span>
+            <TextInput type="number" name="taxAmount" value={taxAmount.toFixed(2)} onChange={this.updateBill}  />
+          </div>
+        </div>     
+        {/* <span>Total Bill</span>
         <TextInput type="number"  name="totalBill" value={totalBill} onChange={this.updateBill} />
         <span>Tax Amount</span>
-        <TextInput type="number" name="taxAmount" value={taxAmount} onChange={this.updateBill}  />
+        <TextInput type="number" name="taxAmount" value={taxAmount} onChange={this.updateBill}  /> */}
         <span style={{width:'50%', display:'inline-block'}}>Include Taxes</span>
         <Switch offLabel="No" onLabel="Yes" checked={includeTax} onChange={this.changeTax}/>  
         <span>Tip Percent</span>
         <div id="tipslider">
           <Slider name="tipPercent" min={0} max={30} value={tipPercent} handleLabel={tipPercent.toString()} onChange={this.handleTipChange}  labels={horizontalLabels} />
         </div>
-        <span>Amount Per Person</span>
-        <TextInput disabled value={personAmount.toFixed(2)} />
-        <Link to="/"><button className="btn btnHome">Home</button></Link> 
+
+
+
+        <div className='row'>
+          <div className="col s6">
+            <span>Individual Tip Amount</span>
+            <TextInput disabled value={(personAmount-(totalBill/numPeople)).toFixed(2)} />
+          </div>
+          <div className="col s6">
+            <span>Amount Per Person</span>
+            <TextInput disabled value={personAmount.toFixed(2)} />
+          </div>
+        </div>
+
+
+
+        {/* <span>Amount Per Person</span>
+        <TextInput disabled value={personAmount.toFixed(2)} /> */}
+        <p>
+          <Link to="/"><button className="btn">Home</button></Link>
+        </p> 
       </section>
     )
   }
