@@ -19,6 +19,10 @@
   border:none;
   cursor:pointer;
   font-size:36px;
+  border-bottom:3px solid #fed931;
+}
+.mainHolder a:last-child .section{
+  border-bottom:none;
 }
 .sec1{
   background: #ccc;
@@ -30,8 +34,8 @@
   background: #6a6a6a;
 }
 .or{
-  background: black;
-  color:white;
+  background:url('/images/or.png');
+  color:black;
   height: 50px;
   width: 50px;
   line-height: 50px;
@@ -39,6 +43,7 @@
   position: relative;
   margin: -25px auto;
   font-weight: bold;
+  box-shadow: 0px 5px 3px 3px rgba(0,0,0,0.3);
 }
 .topNav section{
   width: 100%;
@@ -47,6 +52,7 @@
   display: flex;
   padding: 0 12px;
   justify-content: space-between;
+  
 }
 .switch{
   width:50%;
@@ -113,7 +119,17 @@ input[type=text]:not(.browser-default):disabled, input[type=number]:not(.browser
   text-align: left;
   font-size:10px;
 }
-
+.btn, .btn-large, .btn-small {
+  text-decoration: none;
+  color: black;
+  background-color: #fed931;
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+  cursor: pointer;
+  font-weight: bold;
+}
 .btnHome{
   margin-bottom: 24px;
 }
@@ -131,4 +147,20 @@ input[type=text]:not(.browser-default):disabled, input[type=number]:not(.browser
 }
 .topNav button{
   display: flex;
+}
+
+.rangeslider-horizontal .rangeslider__fill {
+  height: 100%;
+  background-color: #fed931;
+  border-radius: 10px;
+  top: 0;
+}
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
+  background-color: #e4c331;
+}
+.switch label input[type=checkbox]:checked+.lever, .btn:hover, .btn-large:hover, .btn-small:hover { 
+  background-color: #f8e17b;
+}
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: #fed931;
 }
