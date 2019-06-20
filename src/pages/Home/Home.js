@@ -8,15 +8,15 @@ export default class Home extends PureComponent {
     return (
         <section className="mainHolder container">
           <Link to="/TotalSum">
-            <button className="section sec1">Total Sum</button>
+            <button className="section sec1"></button>
           </Link>          
           <div className="or">OR</div>
           <Link to="/Even">
-            <button className="section sec2">Even Steven</button>
+            <button className="section sec2"></button>
           </Link>          
           <div className="or">OR</div>
           <Link to="/Itemize">
-            <button className="section sec3">Itemize</button>
+            <button className="section sec3"></button>
           </Link>
         </section>
       
