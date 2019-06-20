@@ -33,14 +33,18 @@ export default class Itemize extends PureComponent {
   };
 
   updateSelf = event => {    
-    const { name, value } = event.target;
-    this.setState({ [name]: parseFloat(value) });
+    let { name, value } = event.target;
+    value = value.replace(/\./g, '')
+    let temp = value.replace(/^0+/, '')
+    this.setState({ [name]: parseFloat(temp)/100 });
   }
 
   updateBill = event => {    
-    const { name, value } = event.target;
-    this.setState({ [name]: parseFloat(value) });
-
+    let { name, value } = event.target;
+    value = value.replace(/\./g, '')
+    let temp = value.replace(/^0+/, '')
+    this.setState({ [name]: parseInt(temp)/100});
+    
     let _this = this;
     let _cb = this.calculatePerPerson
     setTimeout(
@@ -118,11 +122,11 @@ export default class Itemize extends PureComponent {
         <div className='row'>
           <div className="col s6">
             <span>Total Bill</span>
-            <TextInput type="number"  name="totalBill" value={totalBill} onChange={this.updateBill} />
+            <TextInput type="number"  name="totalBill" value={totalBill.toFixed(2)} onChange={this.updateBill} />
           </div>
           <div className="col s6">
             <span>Tax Amount</span>
-            <TextInput type="number" name="taxAmount" value={taxAmount} onChange={this.updateBill}  />
+            <TextInput type="number" name="taxAmount" value={taxAmount.toFixed(2)} onChange={this.updateBill}  />
           </div>
           <span className="left-align note">Needed for the tax rate.</span>
         </div>
@@ -144,7 +148,7 @@ export default class Itemize extends PureComponent {
             <Slider min={1} max={12} value={splitPrice} handleLabel={splitPrice.toString()}  onChange={this.handleSplitChange}/>
           </div><div className="col s6">
             <span>Item Price</span>
-            <TextInput type="number"  name="itemPrice" value={itemPrice} onChange={this.updateSelf}/>
+            <TextInput type="number"  name="itemPrice" value={itemPrice.toFixed(2)} onChange={this.updateSelf}/>
           </div>
           <div className="col s6">
           <span>&nbsp;</span>
