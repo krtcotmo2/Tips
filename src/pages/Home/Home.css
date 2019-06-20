@@ -3,7 +3,7 @@
   width:100%;
   max-width:500px;
  height: calc(100vh - 48px);
- margin-top:48px;
+ 
  max-height: 800px;
 }
 .mainHolder h3{
@@ -142,7 +142,6 @@ input[type=text]:not(.browser-default):disabled, input[type=number]:not(.browser
 }
 
 .topNav{
-  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
