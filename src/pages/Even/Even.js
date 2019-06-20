@@ -61,7 +61,6 @@ export default class Even extends PureComponent {
   }
 
   calculatePerPerson = () => {
-    console.log(this.state)
     let tippableAmount = this.state.includeTax ? this.state.totalBill : this.state.totalBill - this.state.taxAmount;
     let totalTip = tippableAmount * (this.state.tipPercent/100);
     let personTip = totalTip / this.state.numPeople;    

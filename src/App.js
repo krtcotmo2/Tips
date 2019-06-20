@@ -49,7 +49,6 @@ function App() {
     Itemized allows you to asign specific dollar amounts per item and you can even split the cost of an item between varying multiple people.\n
     Click on any one of the buttons to enter that tip calculator.`
   }   
-  console.log(title)
   setOpen(true);
 }
 
