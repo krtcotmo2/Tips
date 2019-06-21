@@ -24,6 +24,7 @@ There are three modes to this application:
 - Total Sum
 - Even Steven
 - Itemize
+
 Each mode can be accessed by clicking on the buttons of the Home Page - Individual Page in src directory
 
 In all three modes the user has the option of tipping on the total or the total without the tip. Clicking on the Include Taxes switch will determine if the tip includes the taxes. The later option requires that the tip total be entered into the field. If the user will tip on the total including tax, then the tax amount is not required.
