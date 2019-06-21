@@ -6,7 +6,7 @@ export default class TopNav extends PureComponent{
       
         <div className="topNav">
           <section>
-            <h5 style={{fontWeight:"bold", margin:"0px"}}>Tip 'em</h5>
+            <img src="/images/tipLogo.png"/>
             <button className="btn-small"onClick={this.props.openModal}>Help</button>
           </section>
         </div>

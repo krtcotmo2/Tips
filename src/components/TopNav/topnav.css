@@ -1,6 +1,28 @@
-.topNav{
-  background:#008232;
+.topNav{  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 12px;
+  top:0px;
+  width: 100%;
+  min-height:48px;
+  z-index:100;
+  background:rgb(3, 86, 41);
   color:white;
   max-width:500px;
   margin:0 auto;
 } 
+
+.topNav section{
+  width: 100%;
+  max-width: 500px;
+  margin:0px auto;
+  display: flex;
+  padding: 0 12px;
+  justify-content: space-between;
+  
+}
+
+.topNav button{
+  display: flex;
+}

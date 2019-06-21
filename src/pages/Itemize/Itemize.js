@@ -191,7 +191,7 @@ export default class Itemize extends PureComponent {
             </p>
           </div>
         </div>
-        <p>
+        <p style={{backgroundColor:'#e2e0c5', paddingTop:"15px", marginTop:'0px'}}>
           <Link to="/"><button className="btn btnHome">Home</button></Link>
         </p>
       </section>
