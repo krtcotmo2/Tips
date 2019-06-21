@@ -18,7 +18,7 @@ Responsive design to accommodate various mobile device sizes as well as resizing
 Platform to host the solution.
 
 # The Application
-The application is designed to provide a quick and easy way to calcaute a tip.Ideally this would be a mobile application. It makes more sense to have it on the device opposed to relying on a network connection. Despite that fact, I used responsinve design so that the app would adjust on a pc screen as it resized.
+The application is designed to provide a quick and easy way to calcaute a tip. Ideally this would be a mobile application. It makes more sense to have it on the device opposed to relying on a network connection. Despite that fact, I used responsinve design so that the app would adjust on a pc screen as it resized.
 
 There are three modes to this application:
 - Total Sum
