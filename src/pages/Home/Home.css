@@ -14,6 +14,10 @@
 }
 .mainHolder  .row{
   margin-bottom:0px;
+  background-color: #e2e0c5;
+}
+.mainHolder a:last-child .section{
+  border-bottom:none;
 }
 .btn, .btn-large, .btn-small {
   text-decoration: none;
@@ -76,9 +80,6 @@ background-color:#e2e0c5 !important;
   background-image: url(/images/cartouche.png), url(/images/cartouche.png),  url(/images/border.png), url(/images/itemize.png);
   background-repeat: no-repeat, no-repeat, repeat-x, no-repeat;
   background-position: 5px 5px, calc(100% - 5px) 5px, 0px calc(100% - 5px), center center;
-}
-.mainHolder a:last-child .section{
-  border-bottom:none;
 }
 
 /*Toggle Switches*/
