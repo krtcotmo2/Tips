@@ -1,18 +1,16 @@
 # Tip 'em
-![alt text](https://img.shields.io/badge/uses-React-blue.svg)  
+![alt text](https://img.shields.io/badge/uses-React-blue.svg)  ![alt text](https://img.shields.io/badge/uses-Materialize-blue.svg) ![alt text](https://img.shields.io/badge/uses-JavaScript-blue.svg) ![alt text](https://img.shields.io/badge/uses-Responsive_Design-blue.svg) 
 
+#### React 
 Front end library to allow for component development. Used an additional NPM package called react-rangeslider for a stylized range slider with improved functionality over the Materialize range slider.
 
-![alt text](https://img.shields.io/badge/uses-Materialize-blue.svg) 
-
+#### Materialize 
 CSS library for quicker and more consistent styling of the UI.
 
-![alt text](https://img.shields.io/badge/uses-JavaScript-blue.svg) 
-
+#### JavaScript 
 Standard ES6 JavaScript to drive the calculations of the tool.
 
-![alt text](https://img.shields.io/badge/uses-Responsive_Design-blue.svg) 
-
+#### Responsive Design 
 Responsive design to accommodate various mobile device sizes as well as resizing on a pc window. This allows the visual elements to remain in the same relative position regardless of the device.
 
 
