@@ -20,10 +20,11 @@ Platform to host the solution.
 # The Application
 The application is designed to provide a quick and easy way to calcaute a tip. Ideally this would be a mobile application. It makes more sense to have it on the device opposed to relying on a network connection. Despite that fact, I used responsinve design so that the app would adjust on a pc screen as it resized.
 
-There are three modes to this application. Each mode can be accessed by clicking on the buttons of the Home Page - Individual Page in src directory:
+There are three modes to this application:
 - Total Sum
 - Even Steven
 - Itemize
+Each mode can be accessed by clicking on the buttons of the Home Page - Individual Page in src directory
 
 In all three modes the user has the option of tipping on the total or the total without the tip. Clicking on the Include Taxes switch will determine if the tip includes the taxes. The later option requires that the tip total be entered into the field. If the user will tip on the total including tax, then the tax amount is not required.
 
