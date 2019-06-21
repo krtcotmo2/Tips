@@ -1,5 +1,6 @@
 # Tip 'em
 ![alt text](https://img.shields.io/badge/uses-React-blue.svg)  ![alt text](https://img.shields.io/badge/uses-Materialize-blue.svg) ![alt text](https://img.shields.io/badge/uses-JavaScript-blue.svg) ![alt text](https://img.shields.io/badge/uses-Responsive_Design-blue.svg) 
+![alt text](https://img.shields.io/badge/uses-Heroku-blue.svg) 
 
 #### React 
 Front end library to allow for component development. Used an additional NPM package called react-rangeslider for a stylized range slider with improved functionality over the Materialize range slider.
@@ -13,7 +14,8 @@ Standard ES6 JavaScript to drive the calculations of the tool.
 #### Responsive Design 
 Responsive design to accommodate various mobile device sizes as well as resizing on a pc window. This allows the visual elements to remain in the same relative position regardless of the device.
 
-
+#### Heroku 
+Platform to host the solution.
 
 The application is designed to provide a quick and easy way to calcaute a tip.Ideally this would be a mobile application. It makes more sense to have it on the device opposed to relying on a network connection. Despite that fact, I used responsinve design so that the app would adjust on a pc screen as it resized.
 
