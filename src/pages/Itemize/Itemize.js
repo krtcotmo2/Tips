@@ -18,49 +18,54 @@ export default class Itemize extends PureComponent {
       allSubtotals:0,
     }
   };
-
+  componentDidMount = () => {
+    this.setState({
+      includeTax: localStorage.getItem("defaultTax") === 'false' ? false: true,
+      tipPercent: localStorage.getItem("defaultTipPercent") || 15,
+    });
+  };
   handleTipChange = value => {
     this.setState({
       tipPercent: value,
       indTotalWTip: this.calculatePerPerson(),
     })    
   };
-
   handleSplitChange = value => {
     this.setState({
       splitPrice: value,
     })    
   };
-
   updateSelf = event => {    
     let { name, value } = event.target;
-    value = value.replace(/\./g, '')
-    let temp = value.replace(/^0+/, '')
+    //drops the decimal and then converts the number to a 2 digit decimal 
+    //prevents user from having to enter in a decimal while they type
+    value = value.replace(/\./g, '');
+    let temp = value.replace(/^0+/, '');
     this.setState({ [name]: parseFloat(temp)/100 });
-  }
-
+  };
   updateBill = event => {    
     let { name, value } = event.target;
-    value = value.replace(/\./g, '')
-    let temp = value.replace(/^0+/, '')
+    //drops the decimal and then converts the number to a 2 digit decimal 
+    //prevents user from having to enter in a decimal while they type
+    value = value.replace(/\./g, '');
+    let temp = value.replace(/^0+/, '');
     this.setState({ [name]: parseInt(temp)/100});
     
     let _this = this;
-    let _cb = this.calculatePerPerson
+    let _cb = this.calculatePerPerson;
     setTimeout(
       function(){ 
         _this.setState({
           indTotalWTip: _cb(),
         }); 
     }, 5);
-  };
-  
+  };  
   changeTax = event => {
     this.setState({
       includeTax: (event.target.checked),
     });
     let _this = this;
-    let _cb = this.calculatePerPerson
+    let _cb = this.calculatePerPerson;
     setTimeout(
       function(){ 
         _this.setState({
@@ -68,7 +73,6 @@ export default class Itemize extends PureComponent {
         }); 
     }, 5);    
   };
-
   addToSubTotal= () => {  
     let subtotal = this.state.indSubTotal;
     let curItem = this.state.itemPrice / this.state.splitPrice;
@@ -82,7 +86,7 @@ export default class Itemize extends PureComponent {
       allSubtotals:allSubtotals + curItem,
     });
     let _this = this;
-    let _cb = this.calculatePerPerson
+    let _cb = this.calculatePerPerson;
     setTimeout(
       function(){ 
         _this.setState({
@@ -90,7 +94,6 @@ export default class Itemize extends PureComponent {
         }); 
     }, 5);
   };
-
   calculatePerPerson = () => {
     let taxpercent = (this.state.totalBill - (this.state.totalBill - this.state.taxAmount)) / (this.state.totalBill - this.state.taxAmount);
     let subtotal = this.state.indSubTotal;     
@@ -99,8 +102,7 @@ export default class Itemize extends PureComponent {
     }else{
       return (subtotal * (1 + (this.state.tipPercent/100))) +  (taxpercent * subtotal);
     }
-  }
-
+  };
   clearIndividual = () => {
     this.setState({
       indSubTotal: 0,
@@ -108,7 +110,7 @@ export default class Itemize extends PureComponent {
       splitPrice:1,
       indTotalWTip:0,
     });
-  }
+  };
   render() {
     const {tipPercent, indTotalWTip, totalBill, includeTax, taxAmount, itemPrice, splitPrice, allSubtotals } = this.state;
     const horizontalLabels = {

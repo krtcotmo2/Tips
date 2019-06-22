@@ -13,50 +13,54 @@ export default class TotalSum extends PureComponent {
       taxAmount:0,
       includeTax:true
     }
-  }
-  
+  };  
+  componentDidMount = () => {
+    this.setState({
+      includeTax: localStorage.getItem("defaultTax") === 'false' ? false: true,
+      tipPercent: localStorage.getItem("defaultTipPercent") || 15,
+    });
+  };
   handleTipChange = value => {
     this.setState({
       tipPercent: value,
       totalWTip: this.calculatePerPerson(),
-    })
-    
+    });    
   };
-
   updateBill = event =>{   
-
     let { name, value } = event.target;
-    value = value.replace(/\./g, '')
-    let temp = value.replace(/^0+/, '')
+    //drops the decimal and then converts the number to a 2 digit decimal 
+    //prevents user from having to enter in a decimal while they type
+    value = value.replace(/\./g, '');
+    let temp = value.replace(/^0+/, '');
     this.setState({ [name]: parseInt(temp)/100});
+
     let _this = this;
-    let _cb = this.calculatePerPerson
+    let _cb = this.calculatePerPerson;
     setTimeout(
       function(){ 
         _this.setState({
           totalWTip: _cb(),
         }); 
     }, 5);
-  }
+  };
   changeTax = event =>{
     this.setState({
       includeTax: (event.target.checked),
     });
     let _this = this;
-    let _cb = this.calculatePerPerson
+    let _cb = this.calculatePerPerson;
     setTimeout(
       function(){ 
         _this.setState({
           totalWTip: _cb(),
         }); 
     }, 5);    
-  }
-
+  };
   calculatePerPerson = () => {
     let tippableAmount = this.state.includeTax ? this.state.totalBill : this.state.totalBill - this.state.taxAmount;
     let totalTip = tippableAmount * (this.state.tipPercent/100);    
     return totalTip + this.state.totalBill;
-  }
+  };
   render() {
     const {tipPercent, totalWTip, totalBill, includeTax, taxAmount } = this.state;
     const horizontalLabels = {

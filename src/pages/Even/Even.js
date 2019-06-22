@@ -14,7 +14,14 @@ export default class Even extends PureComponent {
       taxAmount:0,
       includeTax:true
     }
-  }
+  };
+  componentDidMount = () => {
+    this.setState({
+      includeTax: localStorage.getItem("defaultTax") === 'false' ? false: true,
+      tipPercent: localStorage.getItem("defaultTipPercent") || 15,
+      numPeople: localStorage.getItem("defaultPartyMemebrs") || 3,
+    });
+  };
   handleTipChange = value => {
     this.setState({
       tipPercent: value,
@@ -30,13 +37,14 @@ export default class Even extends PureComponent {
   };
   updateBill = event =>{    
     let { name, value } = event.target;
-    value = value.replace(/\./g, '')
-    let temp = value.replace(/^0+/, '')
-
+    //drops the decimal and then converts the number to a 2 digit decimal 
+    //prevents user from having to enter in a decimal while they type
+    value = value.replace(/\./g, '');
+    let temp = value.replace(/^0+/, '');
     this.setState({ [name]:  parseInt(temp)/100});
 
     let _this = this;
-    let _cb = this.calculatePerPerson
+    let _cb = this.calculatePerPerson;
     setTimeout(
       function(){ 
         _this.setState({
@@ -51,7 +59,7 @@ export default class Even extends PureComponent {
       includeTax: (event.target.checked),
     });
     let _this = this;
-    let _cb = this.calculatePerPerson
+    let _cb = this.calculatePerPerson;
     setTimeout(
       function(){ 
         _this.setState({
@@ -59,7 +67,6 @@ export default class Even extends PureComponent {
         }); 
     }, 5);
   }
-
   calculatePerPerson = () => {
     let tippableAmount = this.state.includeTax ? this.state.totalBill : this.state.totalBill - this.state.taxAmount;
     let totalTip = tippableAmount * (this.state.tipPercent/100);
