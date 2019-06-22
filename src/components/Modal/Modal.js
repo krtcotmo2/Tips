@@ -30,7 +30,7 @@ export default function Modal(props){
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={props.onClose} color="primary">
+          <Button onClick={props.onClose} color="primary" className="btn">
             OK</Button>
         </DialogActions>
       </Dialog>
