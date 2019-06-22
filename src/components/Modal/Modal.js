@@ -6,6 +6,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import {Link} from "react-router-dom";
 import "./Modal.css";
 import { TextField, InputLabel } from "@material-ui/core";
 
@@ -20,7 +21,7 @@ export default function Modal(props){
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{props.title}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{props.title}<Link to="/Settings"><button className="btn" onClick={props.onClose}>Settings</button></Link></DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">            
               {props.content.split('\n').map((item, key) => {

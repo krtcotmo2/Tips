@@ -15,6 +15,13 @@ export default class Even extends PureComponent {
       includeTax:true
     }
   };
+  componentDidMount = () => {
+    this.setState({
+      includeTax: localStorage.getItem("defaultTax") === 'false' ? false: true,
+      tipPercent: localStorage.getItem("defaultTipPercent") || 15,
+      numPeople: localStorage.getItem("defaultPartyMemebrs") || 3,
+    });
+  };
   handleTipChange = value => {
     this.setState({
       tipPercent: value,

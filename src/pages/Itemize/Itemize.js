@@ -18,6 +18,12 @@ export default class Itemize extends PureComponent {
       allSubtotals:0,
     }
   };
+  componentDidMount = () => {
+    this.setState({
+      includeTax: localStorage.getItem("defaultTax") === 'false' ? false: true,
+      tipPercent: localStorage.getItem("defaultTipPercent") || 15,
+    });
+  };
   handleTipChange = value => {
     this.setState({
       tipPercent: value,

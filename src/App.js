@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import Even from "./pages/Even/Even";
 import Itemize from "./pages/Itemize/Itemize";
 import TotalSum from "./pages/TotalSum/TotalSum";
+import Settings from "./pages/Settings/Settings";
 import ModalWindow from "./components/Modal/Modal"
 
 import './App.css';
@@ -71,6 +72,7 @@ function handleClose() {
           <Route exact path="/Even" component={Even} />
           <Route exact path="/Itemize" component={Itemize} />
           <Route exact path="/TotalSum" component={TotalSum} />
+          <Route exact path="/Settings" component={Settings} />
         </Switch>
       </div>
     </Router>

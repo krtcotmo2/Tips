@@ -14,6 +14,12 @@ export default class TotalSum extends PureComponent {
       includeTax:true
     }
   };  
+  componentDidMount = () => {
+    this.setState({
+      includeTax: localStorage.getItem("defaultTax") === 'false' ? false: true,
+      tipPercent: localStorage.getItem("defaultTipPercent") || 15,
+    });
+  };
   handleTipChange = value => {
     this.setState({
       tipPercent: value,

@@ -50,6 +50,8 @@
   margin: -25px auto;
   font-weight: bold;
   box-shadow: 0px 5px 3px 3px rgba(0,0,0,0.3);
+  position: relative;
+  top: -5px;
 }
 
 /* Three main buttons on home page */
@@ -59,7 +61,7 @@
   border:none;
   cursor:pointer;
   font-size:36px;
-  border-bottom:3px solid #fed931;
+  border-bottom:5px solid #fed931;
   background-color: #e2e0c5;
 }
 button.section:focus{
