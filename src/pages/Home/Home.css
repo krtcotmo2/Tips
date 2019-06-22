@@ -148,7 +148,7 @@ background-color:#e2e0c5 !important;
   visibility: hidden;
 }
 .rangeslider__handle-label{
-    line-height: 27px;
+    line-height: 29px;
     user-select: none; 
     z-index: 2000;
     position: absolute;
