@@ -43,7 +43,7 @@ function App() {
   }else if(url.includes('Settings')){
     title="Setting";
     content = `In the settings you can enter in the default values for the tip percentage, number of people in the party and whether you want to include taxes in your tip calculations\n
-    Each change is auto-saved.`
+    Each change is auto-saved into your cookies. Deleting the cookies removes these values.`
   }else{
     title="Tip 'em";
     content = `Tip 'em allows you to choose from 0% to 30%. You can also choose to include the taxes in the top calculation or exclude it.\n
