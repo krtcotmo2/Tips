@@ -7,6 +7,7 @@ export default class Home extends PureComponent {
   render() {
     return (
         <section className="mainHolder container">
+          {/* 3 butons with divider between them*/}
           <Link to="/TotalSum">
             <button className="section sec1"></button>
           </Link>          
