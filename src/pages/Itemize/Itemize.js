@@ -3,6 +3,8 @@ import { Switch, TextInput } from 'react-materialize';
 import {Link} from "react-router-dom";
 import Slider from 'react-rangeslider'
 
+let taxpercent = 0;
+
 export default class Itemize extends PureComponent {
   constructor (props, context) {
     super(props, context)
@@ -95,12 +97,16 @@ export default class Itemize extends PureComponent {
     }, 5);
   };
   calculatePerPerson = () => {
-    let taxpercent = (this.state.totalBill - (this.state.totalBill - this.state.taxAmount)) / (this.state.totalBill - this.state.taxAmount);
-    let subtotal = this.state.indSubTotal;     
-    if(this.state.includeTax){ 
-      return (subtotal + (taxpercent * subtotal)) * (1 + (this.state.tipPercent/100));
+    console.log(this.state);
+    
+    taxpercent = (this.state.totalBill - (this.state.totalBill - this.state.taxAmount)) / (this.state.totalBill - this.state.taxAmount);
+    console.log(taxpercent)
+    let subtotal = this.state.indSubTotal;  
+    if(this.state.includeTax){       
+      let bill = subtotal + (taxpercent * subtotal);   
+      return bill * (1 + (this.state.tipPercent/100));
     }else{
-      return (subtotal * (1 + (this.state.tipPercent/100))) +  (taxpercent * subtotal);
+      return subtotal + (subtotal*this.state.tipPercent/100) + (subtotal*taxpercent);
     }
   };
   clearIndividual = () => {
@@ -111,8 +117,17 @@ export default class Itemize extends PureComponent {
       indTotalWTip:0,
     });
   };
+  clearAll = () => {
+    this.setState({
+      indSubTotal: 0,
+      itemPrice:0,
+      splitPrice:1,
+      indTotalWTip:0,
+      allSubtotals:0,
+    });
+  };
   render() {
-    const {tipPercent, indTotalWTip, totalBill, includeTax, taxAmount, itemPrice, splitPrice, allSubtotals } = this.state;
+    const {tipPercent, indTotalWTip, totalBill, includeTax, taxAmount, itemPrice, splitPrice, allSubtotals, indSubTotal } = this.state;
     const horizontalLabels = {
       5: '5',
       15: '15',
@@ -174,7 +189,7 @@ export default class Itemize extends PureComponent {
         <div className='row'>          
           <div className="col s6">   
           <span>Tip Amount</span>         
-            <TextInput disabled type="number" value={indTotalWTip.toFixed(2)} />
+            <TextInput disabled type="number" value={includeTax ? ((indSubTotal + (indSubTotal * taxpercent)) * tipPercent / 100).toFixed(2) : (indSubTotal * tipPercent / 100).toFixed(2)} />
           </div>
           <div className="col s6"> 
             <span>Total with Tip</span>             
@@ -189,7 +204,7 @@ export default class Itemize extends PureComponent {
           </div>
           <div className="col s6">  
             <p>
-              <button className="btn" onClick={this.clearIndividual}>Reset</button>
+              <button className="btn" onClick={this.clearAll}>Reset</button>
             </p>
           </div>
         </div>
