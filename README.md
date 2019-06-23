@@ -44,3 +44,6 @@ This is a tricky mode just because of the possibilities in the bill. The total a
 When you have finished the total for that person (and giving them the total) the user can click on the Clear button to reset the subtotal back to zero. This does not reset the amount remaining on the bill. Start adding the totals for the next individual using the same steps. Keep in mind you will still need to add the splitting of the appetizers if the individual is responsible for that part of the bill.
 
 The Reset button clears out the individual sub total and also set the remaining balance back to the total in the event the user wants to re-do the calculations.
+
+# The Future
+Once a true mobile app, we could tap into device's contacts to add people to the list of members in the party. Use the device camera and OCR to create an itemized list of all purchases on the bill by taking a picture of the bill. Drag a person onto the item in the list of items to generate totals. If more than one person is associated with an item, the item's cost is split between those people. Be able to text each party member the details of the bill, all the items they ordered, the sub total, tip percentage, tip amount and total amount. Potentially link accounts so that the tip percent and tax defaults could be different for each person.
