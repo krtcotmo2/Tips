@@ -8,19 +8,13 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {Link} from "react-router-dom";
 import "./Modal.css";
-import { TextField, InputLabel } from "@material-ui/core";
 
+//Materalize modal window
+//On close event for teh OK button
 export default function Modal(props){
-
-
   return (
     <div>
-      <Dialog
-        open={props.open}
-        onClose={props.onClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
+      <Dialog open={props.open} onClose={props.onClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
         <DialogTitle id="alert-dialog-title">{props.title}<Link to="/Settings"><button className="btn" onClick={props.onClose}>Settings</button></Link></DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">            
@@ -30,8 +24,7 @@ export default function Modal(props){
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={props.onClose} color="primary" className="btn">
-            OK</Button>
+          <Button onClick={props.onClose} color="primary" className="btn">OK</Button>
         </DialogActions>
       </Dialog>
     </div>
