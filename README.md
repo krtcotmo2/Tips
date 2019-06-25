@@ -45,5 +45,8 @@ When you have finished the total for that person (and giving them the total) the
 
 The Reset button clears out the individual sub total and also set the remaining balance back to the total in the event the user wants to re-do the calculations.
 
+# The Files
+The scr folder holds the root folders for the React app. The components folder holds the components that make up the modal window and the top navigation bar. The pages holder has specific separate pages. The home page houses the three buttons to propel the user into the various modes. Each mode is represented by one page. 
+
 # The Future
 Once a true mobile app, we could tap into device's contacts to add people to the list of members in the party. Use the device camera and OCR to create an itemized list of all purchases on the bill by taking a picture of the bill. Drag a person onto the item in the list of items to generate totals. If more than one person is associated with an item, the item's cost is split between those people. Be able to text each party member the details of the bill, all the items they ordered, the sub total, tip percentage, tip amount and total amount. Potentially link accounts so that the tip percent and tax defaults could be different for each person.
