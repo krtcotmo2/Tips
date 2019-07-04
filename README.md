@@ -1,4 +1,4 @@
-# ![alt text](https://krtcotmo2/Tips/blob/master/public/images/or.png?raw=true) [Tip 'em](https://tip-em.herokuapp.com/)
+# [Tip 'em](https://tip-em.herokuapp.com/)
 ![alt text](https://img.shields.io/badge/uses-React-blue.svg)  ![alt text](https://img.shields.io/badge/uses-Materialize-blue.svg) ![alt text](https://img.shields.io/badge/uses-JavaScript-blue.svg) ![alt text](https://img.shields.io/badge/uses-Responsive_Design-blue.svg) 
  ![alt text](https://img.shields.io/badge/uses-React_Rangeslider-blue.svg) ![alt text](https://img.shields.io/badge/uses-Heroku-blue.svg) 
 
