@@ -1,6 +1,6 @@
 # Tip 'em
 ![alt text](https://img.shields.io/badge/uses-React-blue.svg)  ![alt text](https://img.shields.io/badge/uses-Materialize-blue.svg) ![alt text](https://img.shields.io/badge/uses-JavaScript-blue.svg) ![alt text](https://img.shields.io/badge/uses-Responsive_Design-blue.svg) 
-![alt text](https://img.shields.io/badge/uses-Heroku-blue.svg) ![alt text](https://img.shields.io/badge/uses-React-Rangeslider-blue.svg) 
+![alt text](https://img.shields.io/badge/uses-Heroku-blue.svg) ![alt text](https://img.shields.io/badge/uses-React_Rangeslider-blue.svg) 
 
 ### Problem
 
