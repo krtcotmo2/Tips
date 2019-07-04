@@ -1,10 +1,10 @@
 # Tip 'em
 ![alt text](https://img.shields.io/badge/uses-React-blue.svg)  ![alt text](https://img.shields.io/badge/uses-Materialize-blue.svg) ![alt text](https://img.shields.io/badge/uses-JavaScript-blue.svg) ![alt text](https://img.shields.io/badge/uses-Responsive_Design-blue.svg) 
-![alt text](https://img.shields.io/badge/uses-Heroku-blue.svg) ![alt text](https://img.shields.io/badge/uses-React_Rangeslider-blue.svg) 
+ ![alt text](https://img.shields.io/badge/uses-React_Rangeslider-blue.svg) ![alt text](https://img.shields.io/badge/uses-Heroku-blue.svg) 
 
 ### Problem
 
-Math is not a strong subject for most people and calculating a tip can be challenging especially if there are more than one party involved? While most people aren’t going to try and short change you it is possible that the person paying out the bill may get stuck with unexpected cost because someone did not include taxes or a drink. This application allows you to accurately calculate the total bill for one person, multiple people and even itemize the bill.
+Math is not a strong subject for most people and calculating a tip can be challenging especially if there are more than one party involved? While most people aren’t going to try and short change you it is possible that the person paying out the bill may get stuck with unexpected cost because someone did not include taxes or a drink. This application allows you to accurately calculate the total bill for one person, multiple people and even itemize the bill. Ideally this would be a mobile application. It makes more sense to have it on the device opposed to relying on a network connection.
 
 ### How I built it 
 Since this is strictly a JavaScript driven application, I did not need to utilize a backend server, Node was used just to set up the Create-React-App structure. Materialize is used for components and styling. I also used the npm package React-Rangeslider to add additional styling into the range slider. Even with React-Rangeslider, I sill went in and changed the css so that the marker on the slider took on the appearance of a gold coin that appears throughout the design.
@@ -25,10 +25,8 @@ Responsive design to accommodate various mobile device sizes as well as resizing
 Platform to host the solution.
 
 # The Application
-The application is designed to provide a quick and easy way to calcaute a tip. Ideally this would be a mobile application. It makes more sense to have it on the device opposed to relying on a network connection. Despite that fact, I used responsinve design so that the app would adjust on a pc screen as it resized.
-
 #### Settings page - Individual Page in src directory
-Accessed from the help modal, this page allows the user to store some default values in local storage.
+Accessed from the help modal, this page allows the user to store some default values for the default tip amount, whether taxes should be included and how many people you commonly split the bill with in local storage.
 
 There are three modes to this application:
 - Total Sum
