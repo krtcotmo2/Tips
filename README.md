@@ -2,6 +2,16 @@
 ![alt text](https://img.shields.io/badge/uses-React-blue.svg)  ![alt text](https://img.shields.io/badge/uses-Materialize-blue.svg) ![alt text](https://img.shields.io/badge/uses-JavaScript-blue.svg) ![alt text](https://img.shields.io/badge/uses-Responsive_Design-blue.svg) 
 ![alt text](https://img.shields.io/badge/uses-Heroku-blue.svg) 
 
+### Problem
+
+Math is not a strong subjet for most people and calcuating a tip can be challenging
+
+### How I built it 
+Since this is 
+```
+cd scripts 
+node seedDB.js
+```
 #### React 
 Front end library to allow for component development. Used an additional NPM package called react-rangeslider for a stylized range slider with improved functionality over the Materialize range slider.
 
