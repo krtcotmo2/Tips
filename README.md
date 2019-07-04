@@ -10,7 +10,7 @@ Math is not a strong subject for most people and calculating a tip can be challe
 Since this is strictly a JavaScript driven application, I did not need to utilize a backend server, Node was used just to set up the Create-React-App structure. Materialize is used for components and styling. I also used the npm package React-Rangeslider to add additional styling into the range slider. Even with React-Rangeslider, I sill went in and changed the css so that the marker on the slider took on the appearance of a gold coin that appears throughout the design.
 
 #### React 
-Front end library to allow for component development. Used an additional NPM package called react-rangeslider for a stylized range slider with improved functionality over the Materialize range slider.
+Front end library to allow for component development and handle data binding and events.
 
 #### Materialize 
 CSS library for quicker and more consistent styling of the UI.
