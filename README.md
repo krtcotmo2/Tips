@@ -3,6 +3,7 @@
  ![alt text](https://img.shields.io/badge/uses-React_Rangeslider-blue.svg) ![alt text](https://img.shields.io/badge/uses-Heroku-blue.svg) 
 
 ### Problem
+[<img src='https://github.com/krtcotmo2/Tips/blob/master/public/images/frontPage.png' align="right"/>](https://tip-em.herokuapp.com/)
 
 Math is not a strong subject for most people and calculating a tip can be challenging especially if there are more than one party involved? While most people aren’t going to try and short change you it is possible that the person paying out the bill may get stuck with unexpected cost because someone did not include taxes or a drink. This application allows you to accurately calculate the total bill for one person, multiple people and even itemize the bill. Ideally this would be a mobile application. It makes more sense to have it on the device opposed to relying on a network connection.
 
