@@ -26,6 +26,7 @@ Platform to host the solution.
 
 # The Application
 #### Settings page - Individual Page in src directory
+[<img src='https://github.com/krtcotmo2/Tips/blob/master/public/images/evenSt.png' align="right"/>](https://tip-em.herokuapp.com/)
 Accessed from the help modal, this page allows the user to store some default values for the default tip amount, whether taxes should be included and how many people you commonly split the bill with in local storage.
 
 There are three modes to this application:
@@ -44,6 +45,7 @@ Use this mode for when you are not looking to split the bill at all. You simply 
 This mode splits the bill into even portions regardless if you ordered the lobster or ordered the side salad. Slide the Number in Party slider to the correct number, up to 12 people, enter in the total amount of the bill, the total amount of taxes for the bill and then slide the tip slider to the desired percentage. Below the slider, the total amount of the tip and the total amount due is displayed. 
 
 #### Itemize - Individual Page in src directory
+[<img src='https://github.com/krtcotmo2/Tips/blob/master/public/images/prefrences.png' align="right"/>](https://github.com/krtcotmo2/Tips/blob/master/public/images/evenSt.png)
 This is a tricky mode just because of the possibilities in the bill. The total amount and taxes are needed in order to get an accurate tax percentage even if the bill does not include the taxes before the tip. After the total and taxes are entered the user slides the tip percent to the desired amount and enters the dollar value of the first item for an individual in the item price field. If the item was shared, in the insatnce of an appetizer, the amount can be split evenly by using the slider just above the item price. Once the item price is enetered the user clicks on the Add Item button. This will start a subtotal of that individual's bill and shows you how much of the original bill still remains. Continue to enter in the remaining items for that person by repeating the steps.
 
 When you have finished the total for that person (and giving them the total) the user can click on the Clear button to reset the subtotal back to zero. This does not reset the amount remaining on the bill. Start adding the totals for the next individual using the same steps. Keep in mind you will still need to add the splitting of the appetizers if the individual is responsible for that part of the bill.
